@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Nuke SELSTRAOLS</title>
+        <link rel="icon" type="image/x-icon" href="nuke-favicon.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+            rel="stylesheet" />
+    </head>
+    <style>
+        h1 {
+            color: lawngreen
+        }
+        p {
+            color: lawngreen
+        }
+        body {
+            background-color: black;
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            overflow: hidden;
+        }
+        .nukebutton {
+            height: 100px;
+            width: 100px;
+            font-size: 50px;
+            background-color: black;
+            border-color: lawngreen;
+            color: lawngreen;
+            font-family: "Press Start 2P", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .display {
+            background-color: black;
+            color: lawngreen;
+            height: 100px;
+            width: 307px;
+            font-size: 50px;
+        }
+        .press-start-2p-regular {
+            font-family: "Press Start 2P", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+    <body style="text-align: center">
+        <h1 class="press-start-2p-regular">Nuke SELSTRAOLS*</h1>
+        <textarea
+            class="press-start-2p-regular"
+            style="
+                height: 120px;
+                width: 500px;
+                background-color: black;
+                border: hidden;
+                color: lawngreen;
+                text-align: center;
+                font-size: 50px;
+            "></textarea
+        ><br /><br />
+        <button class="nukebutton">1</button>
+        <button class="nukebutton">2</button>
+        <button class="nukebutton">3</button><br />
+        <button class="nukebutton">4</button>
+        <button class="nukebutton">5</button>
+        <button class="nukebutton">6</button><br />
+        <button class="nukebutton">7</button>
+        <button class="nukebutton">8</button>
+        <button class="nukebutton">9</button><br />
+        <button class="nukebutton">#</button>
+        <button class="nukebutton">0</button>
+        <button class="nukebutton" class="gobutton" onclick="showalert()">⏎</button>
+        <p class="press-start-2p-regular">super effective launch system to rule all other launch systems*</p>
+        <script>
+            /*const buttons = document.getElementsByClassName("nukebutton");
+            const code = document.getElementById("code");
+            for (var button in buttons) {
+                button.addEventListener("click", function () {
+                    code.innerHTML = code.innerHTML + button.innerHTML;
+                    document.getElementById("display").innerHTML =
+                        code.innerHTML + button.innerHTML;
+                });
+            }*/
+            function showalert() {
+                alert("Incorrect Code");
+            }
+        </script>
+    </body>
+</html>
