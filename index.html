@@ -152,6 +152,7 @@
             var vorticeapp = "1567";
             var calendar = "4713";
             var colortoyellow = "3300";
+            var colortoblue = "8738";
 
             function clear() {
                 document.getElementById("displayPanel").value = "";
@@ -171,8 +172,8 @@
                     ) {
                         document.getElementById("displayPanel").style.color =
                             "skyblue";
-                        document.getElementById("displayPanel").value =
-                            "hi maya, speak to me in bio today, ok!";
+                        document.getElementById("displayPanel").value = "";
+                        /*"hi maya, speak to me in bio today, ok!";*/
                     } else {
                         if (
                             document
@@ -211,7 +212,8 @@
                                             "displayPanel"
                                         ).value = "";
                                     } else {
-                                        if ( //incorrect message clearer
+                                        if (
+                                            //incorrect message clearer
                                             document
                                                 .getElementById("displayPanel")
                                                 .value.includes("incorrect")
@@ -220,12 +222,27 @@
                                                 "displayPanel"
                                             ).value = "";
                                         } else {
-                                            document.getElementById(
-                                                "displayPanel"
-                                            ).style.color = "red";
-                                            document.getElementById(
-                                                "displayPanel"
-                                            ).value = "incorrect";
+                                            if (
+                                                document
+                                                    .getElementById(
+                                                        "displayPanel"
+                                                    )
+                                                    .value.includes("8738")
+                                            ) {
+                                                document.getElementById(
+                                                    "displayPanel"
+                                                ).style.color = "skyblue";
+                                                document.getElementById(
+                                                    "displayPanel"
+                                                ).value = "";
+                                            } else {
+                                                document.getElementById(
+                                                    "displayPanel"
+                                                ).style.color = "red";
+                                                document.getElementById(
+                                                    "displayPanel"
+                                                ).value = "incorrect";
+                                            }
                                         }
                                     }
                                 }
