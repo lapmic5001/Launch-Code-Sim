@@ -12,10 +12,10 @@
     </head>
     <style>
         h1 {
-            color: lawngreen
+            color: lawngreen;
         }
         p {
-            color: lawngreen
+            color: lawngreen;
         }
         body {
             background-color: black;
@@ -51,6 +51,8 @@
     <body style="text-align: center">
         <h1 class="press-start-2p-regular">Nuke SELSTRAOLS*</h1>
         <textarea
+            id="displayPanel"
+            type="text"
             class="press-start-2p-regular"
             style="
                 height: 120px;
@@ -62,21 +64,80 @@
                 font-size: 50px;
             "></textarea
         ><br /><br />
-        <button class="nukebutton">1</button>
-        <button class="nukebutton">2</button>
-        <button class="nukebutton">3</button><br />
-        <button class="nukebutton">4</button>
-        <button class="nukebutton">5</button>
-        <button class="nukebutton">6</button><br />
-        <button class="nukebutton">7</button>
-        <button class="nukebutton">8</button>
-        <button class="nukebutton">9</button><br />
-        <button class="nukebutton">#</button>
-        <button class="nukebutton">0</button>
-        <button class="nukebutton" class="gobutton" onclick="showalert()">⏎</button>
-        <p class="press-start-2p-regular">super effective launch system to rule all other launch systems*</p>
+        <button
+            class="nukebutton"
+            onclick="document.getElementById( 
+            'displayPanel').value = displayPanel.value + '1'">
+            1
+        </button>
+        <button
+            class="nukebutton"
+            onclick="document.getElementById( 
+            'displayPanel').value = displayPanel.value + '2'">
+            2
+        </button>
+        <button
+            class="nukebutton"
+            onclick="document.getElementById( 
+            'displayPanel').value = displayPanel.value + '3'">
+            3</button
+        ><br />
+        <button
+            class="nukebutton"
+            onclick="document.getElementById( 
+            'displayPanel').value = displayPanel.value + '4'">
+            4
+        </button>
+        <button
+            class="nukebutton"
+            onclick="document.getElementById( 
+            'displayPanel').value = displayPanel.value + '5'">
+            5
+        </button>
+        <button
+            class="nukebutton"
+            onclick="document.getElementById( 
+            'displayPanel').value = displayPanel.value + '6'">
+            6</button
+        ><br />
+        <button
+            class="nukebutton"
+            onclick="document.getElementById( 
+            'displayPanel').value = displayPanel.value + '7'">
+            7
+        </button>
+        <button
+            class="nukebutton"
+            onclick="document.getElementById( 
+            'displayPanel').value = displayPanel.value + '8'">
+            8
+        </button>
+        <button
+            class="nukebutton"
+            onclick="document.getElementById( 
+            'displayPanel').value = displayPanel.value + '9'">
+            9</button
+        ><br />
+        <button
+            class="nukebutton"
+            onclick="document.getElementById( 
+            'displayPanel').value = ''">
+            #
+        </button>
+        <button
+            class="nukebutton"
+            onclick="document.getElementById( 
+            'displayPanel').value = displayPanel.value + '0'">
+            0
+        </button>
+        <button class="nukebutton" class="gobutton" onclick="showalert()">
+            ⏎
+        </button>
+        <p class="press-start-2p-regular">
+            super effective launch system to rule all other launch systems*
+        </p>
         <script>
-            /*const buttons = document.getElementsByClassName("nukebutton");
+            /*const buttons = document.getElementById("displayPanel");
             const code = document.getElementById("code");
             for (var button in buttons) {
                 button.addEventListener("click", function () {
@@ -84,7 +145,8 @@
                     document.getElementById("display").innerHTML =
                         code.innerHTML + button.innerHTML;
                 });
-            }*/
+            } ty trig!!!*/
+
             function showalert() {
                 alert("Incorrect Code");
             }
