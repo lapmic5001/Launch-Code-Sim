@@ -152,35 +152,40 @@
 
             function run() {
                 if (
-                    document
-                        .getElementById("displayPanel")
-                        .value.includes("0000")
+                    document.getElementById("displayPanel").value.includes("69")
                 ) {
-                    window.location.replace("https://www.google.com/");
+                    document.getElementById("displayPanel").style.color = "red";
+                    document.getElementById("displayPanel").value = "pls no";
                 } else {
                     if (
                         document
                             .getElementById("displayPanel")
-                            .value.includes("1567")
+                            .value.includes("0000")
                     ) {
-                        window.location.replace("https://www.vortice.app/");
+                        window.location.replace("https://www.google.com/");
                     } else {
                         if (
                             document
                                 .getElementById("displayPanel")
-                                .value.includes("69")
+                                .value.includes("1567")
                         ) {
-                            document.getElementById(
-                                "displayPanel"
-                            ).style.color = "red";
-                            document.getElementById("displayPanel").value =
-                                "pls no";
+                            window.location.replace("https://www.vortice.app/");
                         } else {
-                            document.getElementById(
-                                "displayPanel"
-                            ).style.color = "red";
-                            document.getElementById("displayPanel").value =
-                                "incorrect";
+                            if (
+                                document
+                                    .getElementById("displayPanel")
+                                    .value.includes("4713")
+                            ) {
+                                window.location.replace(
+                                    "https://ccsdschools.instructure.com/calendar/"
+                                );
+                            } else {
+                                document.getElementById(
+                                    "displayPanel"
+                                ).style.color = "red";
+                                document.getElementById("displayPanel").value =
+                                    "incorrect";
+                            }
                         }
                     }
                 }
