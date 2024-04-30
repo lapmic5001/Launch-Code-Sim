@@ -56,7 +56,7 @@
             class="press-start-2p-regular"
             style="
                 height: 120px;
-                width: 500px;
+                width: 100vb;
                 background-color: black;
                 border: hidden;
                 color: lawngreen;
@@ -121,7 +121,7 @@
         <button
             class="nukebutton"
             onclick="document.getElementById( 
-            'displayPanel').value = ''">
+            'displayPanel').value = ''; document.getElementById('displayPanel').style.color = 'lawngreen' ">
             X
         </button>
         <button
@@ -130,12 +130,11 @@
             'displayPanel').value = displayPanel.value + '0'">
             0
         </button>
-        <button class="nukebutton" class="gobutton" onclick="showalert()">
-            ⏎
-        </button>
+        <button class="nukebutton" class="gobutton" onclick="run()">></button>
         <p class="press-start-2p-regular">
             super effective launch system to rule all other launch systems*
         </p>
+        <p class="press-start-2p-regular">(its 4 digit codes btw)</p>
         <script>
             /*const buttons = document.getElementById("displayPanel");
             const code = document.getElementById("code");
@@ -147,8 +146,44 @@
                 });
             } ty trig!!!*/
 
-            function showalert() {
-                alert("Incorrect Code");
+            function clear() {
+                document.getElementById("displayPanel").value = "";
+            }
+
+            function run() {
+                if (
+                    document
+                        .getElementById("displayPanel")
+                        .value.includes("0000")
+                ) {
+                    window.location.replace("https://www.google.com/");
+                } else {
+                    if (
+                        document
+                            .getElementById("displayPanel")
+                            .value.includes("1567")
+                    ) {
+                        window.location.replace("https://www.vortice.app/");
+                    } else {
+                        if (
+                            document
+                                .getElementById("displayPanel")
+                                .value.includes("69")
+                        ) {
+                            document.getElementById(
+                                "displayPanel"
+                            ).style.color = "red";
+                            document.getElementById("displayPanel").value =
+                                "pls no";
+                        } else {
+                            document.getElementById(
+                                "displayPanel"
+                            ).style.color = "red";
+                            document.getElementById("displayPanel").value =
+                                "incorrect";
+                        }
+                    }
+                }
             }
         </script>
     </body>
