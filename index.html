@@ -211,12 +211,22 @@
                                             "displayPanel"
                                         ).value = "";
                                     } else {
-                                        document.getElementById(
-                                            "displayPanel"
-                                        ).style.color = "red";
-                                        document.getElementById(
-                                            "displayPanel"
-                                        ).value = "incorrect";
+                                        if ( //incorrect message clearer
+                                            document
+                                                .getElementById("displayPanel")
+                                                .value.includes("incorrect")
+                                        ) {
+                                            document.getElementById(
+                                                "displayPanel"
+                                            ).value = "";
+                                        } else {
+                                            document.getElementById(
+                                                "displayPanel"
+                                            ).style.color = "red";
+                                            document.getElementById(
+                                                "displayPanel"
+                                            ).value = "incorrect";
+                                        }
                                     }
                                 }
                             }
