@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Nuke SELSTRAOLS</title>
+        <title>Launch Code Sim</title>
         <link rel="icon" type="image/x-icon" href="images/nuke-favicon.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,6 +11,9 @@
             rel="stylesheet" />
     </head>
     <style>
+        button {
+            text-align: center;
+        }
         h1 {
             color: lawngreen;
         }
@@ -49,14 +52,14 @@
         }
     </style>
     <body style="text-align: center">
-        <h1 class="press-start-2p-regular">Nuke SELSTRAOLS*</h1>
+        <h1 class="press-start-2p-regular">Launch Code Simulator</h1>
         <textarea
             id="displayPanel"
             type="text"
             class="press-start-2p-regular"
             style="
                 height: 120px;
-                width: 100vb;
+                width: 1000px;
                 background-color: black;
                 border: hidden;
                 color: lawngreen;
@@ -153,6 +156,8 @@
             var calendar = "4713";
             var colortoyellow = "3300";
             var colortoblue = "8738";
+            var mrchristensen = "1985";
+            var vorticecontract = "1985";
 
             function clear() {
                 document.getElementById("displayPanel").value = "";
@@ -236,12 +241,47 @@
                                                     "displayPanel"
                                                 ).value = "";
                                             } else {
-                                                document.getElementById(
-                                                    "displayPanel"
-                                                ).style.color = "red";
-                                                document.getElementById(
-                                                    "displayPanel"
-                                                ).value = "incorrect";
+                                                if (
+                                                    document
+                                                        .getElementById(
+                                                            "displayPanel"
+                                                        )
+                                                        .value.includes("1985")
+                                                ) {
+                                                    document.getElementById(
+                                                        "displayPanel"
+                                                    ).style.color = "orange";
+                                                    document.getElementById(
+                                                        "displayPanel"
+                                                    ).value =
+                                                        "The Enterprise is coming!";
+                                                } else {
+                                                    if (
+                                                        document
+                                                            .getElementById(
+                                                                "displayPanel"
+                                                            )
+                                                            .value.includes(
+                                                                "1111"
+                                                            )
+                                                    ) {
+                                                        document.getElementById(
+                                                            "displayPanel"
+                                                        ).style.color =
+                                                            "lawngreen";
+                                                        document.getElementById(
+                                                            "displayPanel"
+                                                        ).value =
+                                                            "This website is hereby endorsed to nova labs, vortice, and any other website or corperation affiliated with nova labs or vortice.";
+                                                    } else {
+                                                        document.getElementById(
+                                                            "displayPanel"
+                                                        ).style.color = "red";
+                                                        document.getElementById(
+                                                            "displayPanel"
+                                                        ).value = "incorrect";
+                                                    }
+                                                }
                                             }
                                         }
                                     }
