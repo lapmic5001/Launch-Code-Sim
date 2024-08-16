@@ -166,46 +166,56 @@
             }
 
             function run() {
-                if (document.getElementById("displayPanel").value.includes("69")) {
-                    document.getElementById("displayPanel").style.color = "red";
-                    document.getElementById("displayPanel").value = "pls no";
-                } else if {
-                     (document.getElementById("displayPanel").value.includes("8607")) {
-                        document.getElementById("displayPanel").style.color = "skyblue";
-                        document.getElementById("displayPanel").value = "";
-                        /*"hi maya, speak to me in bio today, ok!";*/
-                } else if {
-                        (document.getElementById("displayPanel").value.includes("0000")) {
-                            window.location.replace("https://www.google.com/");
-                } else if {
-                        (document.getElementById("displayPanel").value.includes("1567")) {
-                            window.location.replace("https://www.vortice.app/");
-                } else if {
-                        (document.getElementById("displayPanel").value.includes("4713")) {
-                            window.location.replace("https://ccsdschools.instructure.com/calendar/");
-                } else if {
-                        (document.getElementById("displayPanel").value.includes("3300")) {
-                            document.getElementById("displayPanel").style.color = "yellow";
-                            document.getElementById("displayPanel").value = "";
-                } else if {
-                        (document.getElementById("displayPanel").value.includes("incorrect")) {
-                            document.getElementById("displayPanel").value = "";
-                } else if {
-                        (document.getElementById("displayPanel").value.includes("8738")) {
-                            document.getElementById("displayPanel").style.color = "skyblue";
-                            document.getElementById("displayPanel").value = "";
-                } else if {
-                        (document.getElementById("displayPanel").value.includes("1985")) {
-                            document.getElementById("displayPanel").style.color = "orange";
-                            document.getElementById("displayPanel").value = "The Enterprise is coming!";
-                } else if {
-                        (document.getElementById("displayPanel").value.includes("1111")) {
-                            document.getElementById("displayPanel").style.color = "lawngreen";
-                            document.getElementById("displayPanel").value = "This website is hereby endorsed to nova labs, vortice, and any other website or corperation affiliated with nova labs or vortice.";
+                const displayPanel = document.getElementById("displayPanel");
+                const value = displayPanel.value;
+
+                const actions = {
+                    69: () => {
+                        displayPanel.style.color = "red";
+                        displayPanel.value = "pls no";
+                    },
+                    8607: () => {
+                        displayPanel.style.color = "skyblue";
+                        displayPanel.value = "";
+                    },
+                    "0000": () => {
+                        window.location.replace("https://www.google.com/");
+                    },
+                    1567: () => {
+                        window.location.replace("https://www.vortice.app/");
+                    },
+                    4713: () => {
+                        window.location.replace("https://ccsdschools.instructure.com/calendar/");
+                    },
+                    3300: () => {
+                        displayPanel.style.color = "yellow";
+                        displayPanel.value = "";
+                    },
+                    incorrect: () => {
+                        displayPanel.value = "";
+                    },
+                    8738: () => {
+                        displayPanel.style.color = "skyblue";
+                        displayPanel.value = "";
+                    },
+                    1985: () => {
+                        displayPanel.style.color = "orange";
+                        displayPanel.value = "The Enterprise is coming!";
+                    },
+                    1111: () => {
+                        displayPanel.style.color = "lawngreen";
+                        displayPanel.value =
+                            "This website is hereby endorsed to nova labs, vortice, and any other website or corporation affiliated with nova labs or vortice.";
+                    }
+                };
+
+                const action = Object.keys(actions).find((key) => value.includes(key));
+                if (action) {
+                    actions[action]();
                 } else {
-                        document.getElementById("displayPanel").style.color = "red";
-                        document.getElementById("displayPanel").value = "incorrect";
-                }}}}}}}}}}
+                    displayPanel.style.color = "red";
+                    displayPanel.value = "incorrect";
+                }
             }
         </script>
     </body>
