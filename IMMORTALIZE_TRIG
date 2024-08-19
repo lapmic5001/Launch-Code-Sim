@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>THE IMMORTAL TRIG!!!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            #loader {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                z-index: 1;
+                width: 120px;
+                height: 120px;
+                margin: -76px 0 0 -76px;
+                border: 16px solid #f3f3f3;
+                border-radius: 50%;
+                border-top: 16px solid blue;
+                border-right: 16px solid green;
+                border-bottom: 16px solid red;
+                border-left: 16px solid yellow;
+                width: 120px;
+                height: 120px;
+                -webkit-animation: spin 2s linear infinite;
+                animation: spin 2s linear infinite;
+            }
+
+            @-webkit-keyframes spin {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                }
+                100% {
+                    -webkit-transform: rotate(360deg);
+                }
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            .animate-bottom {
+                position: relative;
+                -webkit-animation-name: animatebottom;
+                -webkit-animation-duration: 1s;
+                animation-name: animatebottom;
+                animation-duration: 1s;
+            }
+
+            @-webkit-keyframes animatebottom {
+                from {
+                    bottom: -100px;
+                    opacity: 0;
+                }
+                to {
+                    bottom: 0px;
+                    opacity: 1;
+                }
+            }
+
+            @keyframes animatebottom {
+                from {
+                    bottom: -100px;
+                    opacity: 0;
+                }
+                to {
+                    bottom: 0;
+                    opacity: 1;
+                }
+            }
+
+            #myDiv {
+                display: none;
+                text-align: center;
+                height: 100vh;
+            }
+            footer {
+                background: #333;
+                text-align: center;
+                padding: 1em;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                color: #ffffff;
+            }
+            aside {
+                background: #333;
+                text-align: center;
+                padding: 1em;
+                position: fixed;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 15%;
+                color: #ffffff;
+            }
+            .lolcool {
+                border-radius: 100px;
+                height: 50px;
+                width: 50px;
+                font-size: 25px;
+                color: black;
+                border: hidden;
+                background-color: skyblue;
+                -webkit-animation: spin 2s linear infinite;
+                animation: spin 2s linear infinite;
+            }
+            #crasher:hover {
+                background-color: red;
+                color: red;
+            }
+        </style>
+    </head>
+    <body onload="myFunction()" style="margin: 0">
+        <div id="loader"></div>
+
+        <div style="display: none" id="myDiv" class="animate-bottom">
+            <h2>Today, We are here to immortalize Trig as a monumental figure in my programming career!</h2>
+            <p>Trig was an amazing person, and for this website alone, he taught me this snippet:</p>
+            <pre>
+            const buttons = document.getElementById("displayPanel");
+            const code = document.getElementById("code");
+            for (var button in buttons) {
+                button.addEventListener("click", function () {
+                    code.innerHTML = code.innerHTML + button.innerHTML;
+                    document.getElementById("display").innerHTML =
+                        code.innerHTML + button.innerHTML;
+            });
+            }
+            </pre>
+            <p style="color: white">
+                Button three (3) on the sidebar will crash your browser. This was a fun thing I did with Trig a while
+                back.
+            </p>
+            <aside>
+                <button class="lolcool" onclick="func1()">1</button>
+                <button class="lolcool" onclick="func2()">2</button>
+                <button style="" id="crasher" class="lolcool" onclick="func3()">3</button>
+            </aside>
+            <footer>
+                <p>Estimated Loading Time: <span id="rndIntView"></span>ms</p>
+            </footer>
+        </div>
+
+        <script>
+            var myVar;
+            var rndInt = Math.floor(Math.random() * 3000) + 1;
+
+            function myFunction() {
+                myVar = setTimeout(showPage, rndInt);
+            }
+
+            function showPage() {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("myDiv").style.display = "block";
+                document.getElementById("rndIntView").innerHTML = rndInt;
+            }
+
+            function func1() {
+                alert("hi");
+            }
+
+            function func2() {
+                alert("What do you want?");
+            }
+
+            function func3() {
+                alert("your browser is about to crash.");
+                var total = "";
+                for (var i = 0; i < 10000000000000; i++) {
+                    total += i.toString();
+                    history.pushState(0, 0, total);
+                }
+            }
+        </script>
+    </body>
+</html>
