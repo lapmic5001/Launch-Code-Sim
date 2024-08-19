@@ -99,14 +99,26 @@
             }
             .lolcool {
                 border-radius: 100px;
-                height: 50px;
-                width: 50px;
+                height: 150px;
+                width: 150px;
                 font-size: 25px;
+                margin: 25px;
                 color: black;
                 border: hidden;
                 background-color: skyblue;
                 -webkit-animation: spin 2s linear infinite;
                 animation: spin 2s linear infinite;
+                transition-duration: 0.4s;
+            }
+            .lolcool:hover {
+                background-color: #04aa6d;
+                color: white;
+                height: 165px;
+                width: 165px;
+            }
+            #yellow:hover {
+                background-color: yellow;
+                color: black;
             }
             #crasher:hover {
                 background-color: red;
@@ -131,14 +143,17 @@
             });
             }
             </pre>
-            <p style="color: white">
+            <p
+                style="color: white"
+                title="Button three (3) on the sidebar will crash your browser. This was a fun thing I did with Trig a while
+                back.">
                 Button three (3) on the sidebar will crash your browser. This was a fun thing I did with Trig a while
                 back.
             </p>
             <aside>
                 <button class="lolcool" onclick="func1()">1</button>
-                <button class="lolcool" onclick="func2()">2</button>
-                <button style="" id="crasher" class="lolcool" onclick="func3()">3</button>
+                <button id="yellow" class="lolcool" onclick="func2()">2</button>
+                <button title="THIS WILL CRASH YOUR BROWSER" id="crasher" class="lolcool" onclick="func3()">3</button>
             </aside>
             <footer>
                 <p>Estimated Loading Time: <span id="rndIntView"></span>ms</p>
