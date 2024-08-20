@@ -59,7 +59,6 @@
         <h1 class="press-start-2p-regular">Launch Code Simulator</h1>
         <textarea
             id="displayPanel"
-            type="text"
             class="press-start-2p-regular"
             style="
                 height: 120px;
@@ -69,103 +68,38 @@
                 color: lawngreen;
                 text-align: center;
                 font-size: 50px;
-            "></textarea
-        ><br /><br />
-        <button
-            class="nukebutton"
-            onclick="document.getElementById( 
-            'displayPanel').value = displayPanel.value + '1'">
-            1
-        </button>
-        <button
-            class="nukebutton"
-            onclick="document.getElementById( 
-            'displayPanel').value = displayPanel.value + '2'">
-            2
-        </button>
-        <button
-            class="nukebutton"
-            onclick="document.getElementById( 
-            'displayPanel').value = displayPanel.value + '3'">
-            3</button
-        ><br />
-        <button
-            class="nukebutton"
-            onclick="document.getElementById( 
-            'displayPanel').value = displayPanel.value + '4'">
-            4
-        </button>
-        <button
-            class="nukebutton"
-            onclick="document.getElementById( 
-            'displayPanel').value = displayPanel.value + '5'">
-            5
-        </button>
-        <button
-            class="nukebutton"
-            onclick="document.getElementById( 
-            'displayPanel').value = displayPanel.value + '6'">
-            6</button
-        ><br />
-        <button
-            class="nukebutton"
-            onclick="document.getElementById( 
-            'displayPanel').value = displayPanel.value + '7'">
-            7
-        </button>
-        <button
-            class="nukebutton"
-            onclick="document.getElementById( 
-            'displayPanel').value = displayPanel.value + '8'">
-            8
-        </button>
-        <button
-            class="nukebutton"
-            onclick="document.getElementById( 
-            'displayPanel').value = displayPanel.value + '9'">
-            9</button
-        ><br />
-        <button
-            class="nukebutton"
-            onclick="document.getElementById( 
-            'displayPanel').value = ''; document.getElementById('displayPanel').style.color = 'lawngreen' ">
-            X
-        </button>
-        <button
-            class="nukebutton"
-            onclick="document.getElementById( 
-            'displayPanel').value = displayPanel.value + '0'">
-            0
-        </button>
-        <button class="nukebutton gobutton" onclick="run()">&gt;</button>
+            "></textarea>
+        <br /><br />
+
+        <div>
+            <button class="nukebutton" onclick="appendToDisplay('1')">1</button>
+            <button class="nukebutton" onclick="appendToDisplay('2')">2</button>
+            <button class="nukebutton" onclick="appendToDisplay('3')">3</button><br />
+            <button class="nukebutton" onclick="appendToDisplay('4')">4</button>
+            <button class="nukebutton" onclick="appendToDisplay('5')">5</button>
+            <button class="nukebutton" onclick="appendToDisplay('6')">6</button><br />
+            <button class="nukebutton" onclick="appendToDisplay('7')">7</button>
+            <button class="nukebutton" onclick="appendToDisplay('8')">8</button>
+            <button class="nukebutton" onclick="appendToDisplay('9')">9</button><br />
+            <button class="nukebutton" onclick="clearDisplay()">X</button>
+            <button class="nukebutton" onclick="appendToDisplay('0')">0</button>
+            <button class="nukebutton gobutton" onclick="checkCode()">&gt;</button>
+        </div>
+
         <p class="press-start-2p-regular">super effective launch system to rule all other launch systems*</p>
         <p class="press-start-2p-regular">(its 4 digit codes btw)</p>
+
         <script>
-            /*const buttons = document.getElementById("displayPanel");
-            const code = document.getElementById("code");
-            for (var button in buttons) {
-                button.addEventListener("click", function () {
-                    code.innerHTML = code.innerHTML + button.innerHTML;
-                    document.getElementById("display").innerHTML =
-                        code.innerHTML + button.innerHTML;
-                });
-            } ty trig!!!*/
-
-            var funnynum = "69";
-            var secretmessage = "8607";
-            var standard = "0000";
-            var vorticeapp = "1567";
-            var calendar = "4713";
-            var colortoyellow = "3300";
-            var colortoblue = "8738";
-            var mrchristensen = "1985";
-            var vorticecontract = "1111";
-
-            function clear() {
-                document.getElementById("displayPanel").value = "";
+            function appendToDisplay(Character) {
+                document.getElementById("displayPanel").value += Character;
             }
 
-            function run() {
+            function clearDisplay() {
+                document.getElementById("displayPanel").value = "";
+                document.getElementById("displayPanel").style.color = "lawngreen";
+            }
+
+            function checkCode() {
                 const displayPanel = document.getElementById("displayPanel");
                 const value = displayPanel.value;
 
@@ -191,10 +125,6 @@
                         displayPanel.style.color = "yellow";
                         displayPanel.value = "";
                     },
-                    incorrect: () => {
-                        displayPanel.value = "";
-                        displayPanel.fontSize = "50px";
-                    },
                     8738: () => {
                         displayPanel.style.color = "skyblue";
                         displayPanel.value = "";
@@ -211,9 +141,6 @@
                     2957: () => {
                         displayPanel.style.color = "purple";
                         displayPanel.value = "When should I update next?";
-                    },
-                    1852: () => {
-                        window.location.replace("./IMMORTALIZE_TRIG.html");
                     }
                 };
 
