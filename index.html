@@ -53,43 +53,80 @@
                 font-weight: 400;
                 font-style: normal;
             }
+            #loadScreen {
+                width: 100vw;
+                height: 100vh;
+                background-color: black;
+                color: lawngreen;
+                margin: 0;
+                align-content: center;
+                text-align: center;
+            }
+            .loaderSpan {
+                position: fixed;
+            }
+            #loaderSpan1 {
+                color: lawngreen;
+                top: 50%;
+                left: 40%;
+            }
+            #loaderSpan2 {
+                color: lawngreen;
+                top: 50%;
+                left: 50%;
+            }
+            #loaderSpan3 {
+                color: lawngreen;
+                top: 50%;
+                left: 60%;
+            }
         </style>
     </head>
     <body style="text-align: center">
-        <h1 class="press-start-2p-regular">Launch Code Simulator</h1>
-        <textarea
-            id="displayPanel"
-            class="press-start-2p-regular"
-            style="
-                height: 120px;
-                width: 1000px;
-                background-color: black;
-                border: hidden;
-                color: lawngreen;
-                text-align: center;
-                font-size: 50px;
-            "></textarea>
-        <br /><br />
+        <div id="loadScreen" class="press-start-2p-regular">
+            <h1 id="loadScreenLoader">
+                <span id="loaderSpan1" class="loaderSpan">*</span><span id="loaderSpan2" class="loaderSpan">*</span
+                ><span id="loaderSpan3" class="loaderSpan">*</span>
+            </h1>
+        </div>
+        <div id="mainPasswordDiv">
+            <h1 class="press-start-2p-regular">Launch Code Simulator</h1>
+            <textarea
+                id="displayPanel"
+                class="press-start-2p-regular"
+                style="
+                    height: 120px;
+                    width: 1000px;
+                    background-color: black;
+                    border: hidden;
+                    color: lawngreen;
+                    text-align: center;
+                    font-size: 50px;
+                "></textarea>
+            <br /><br />
 
-        <div>
-            <button class="nukebutton" onclick="appendToDisplay('1')">1</button>
-            <button class="nukebutton" onclick="appendToDisplay('2')">2</button>
-            <button class="nukebutton" onclick="appendToDisplay('3')">3</button><br />
-            <button class="nukebutton" onclick="appendToDisplay('4')">4</button>
-            <button class="nukebutton" onclick="appendToDisplay('5')">5</button>
-            <button class="nukebutton" onclick="appendToDisplay('6')">6</button><br />
-            <button class="nukebutton" onclick="appendToDisplay('7')">7</button>
-            <button class="nukebutton" onclick="appendToDisplay('8')">8</button>
-            <button class="nukebutton" onclick="appendToDisplay('9')">9</button><br />
-            <button class="nukebutton" onclick="clearDisplay()">X</button>
-            <button class="nukebutton" onclick="appendToDisplay('0')">0</button>
-            <button class="nukebutton gobutton" onclick="checkCode()">&gt;</button>
+            <div>
+                <button class="nukebutton" onclick="appendToDisplay('1')">1</button>
+                <button class="nukebutton" onclick="appendToDisplay('2')">2</button>
+                <button class="nukebutton" onclick="appendToDisplay('3')">3</button><br />
+                <button class="nukebutton" onclick="appendToDisplay('4')">4</button>
+                <button class="nukebutton" onclick="appendToDisplay('5')">5</button>
+                <button class="nukebutton" onclick="appendToDisplay('6')">6</button><br />
+                <button class="nukebutton" onclick="appendToDisplay('7')">7</button>
+                <button class="nukebutton" onclick="appendToDisplay('8')">8</button>
+                <button class="nukebutton" onclick="appendToDisplay('9')">9</button><br />
+                <button class="nukebutton" onclick="clearDisplay()">X</button>
+                <button class="nukebutton" onclick="appendToDisplay('0')">0</button>
+                <button class="nukebutton gobutton" onclick="checkCode()">&gt;</button>
+            </div>
+
+            <p class="press-start-2p-regular">super effective launch system to rule all other launch systems*</p>
+            <p class="press-start-2p-regular">(its 4 digit codes btw)</p>
         </div>
 
-        <p class="press-start-2p-regular">super effective launch system to rule all other launch systems*</p>
-        <p class="press-start-2p-regular">(its 4 digit codes btw)</p>
-
         <script>
+            const totalDuration = Math.floor(Math.random() * 9999) + 1; // Set total duration for the loader animation
+
             function appendToDisplay(Character) {
                 document.getElementById("displayPanel").value += Character;
             }
@@ -141,6 +178,12 @@
                     2957: () => {
                         displayPanel.style.color = "purple";
                         displayPanel.value = "When should I update next?";
+                    },
+                    4040: () => {
+                        displayPanel.value = totalDuration;
+                    },
+                    1854: () => {
+                        window.location.replace("./IMMORTALIZE_TRIG.html");
                     }
                 };
 
@@ -150,6 +193,50 @@
                 } else {
                     displayPanel.style.color = "red";
                     displayPanel.value = "incorrect";
+                }
+            }
+            window.addEventListener("load", function () {
+                setTimeout(closeLoader, totalDuration); // Close loader after 3000ms
+                startLoaderAnimation(totalDuration); // Start the loader animation with total duration
+            });
+
+            function closeLoader() {
+                let loadScreen = document.getElementById("loadScreen");
+                document.body.removeChild(loadScreen);
+            }
+
+            function startLoaderAnimation(totalDuration) {
+                let cycleCount = 0; // Track the number of cycles
+                const totalCycles = Math.floor(totalDuration / 20); // Calculate total cycles based on duration
+                const frameDuration = 300; // Duration for each frame
+
+                const loaderInterval = setInterval(() => {
+                    if (cycleCount < totalCycles) {
+                        addAsteric();
+                        cycleCount++;
+                    } else {
+                        clearInterval(loaderInterval); // Stop the interval after completing cycles
+                    }
+                }, frameDuration);
+            }
+
+            function addAsteric() {
+                let span1 = document.getElementById("loaderSpan1");
+                let span2 = document.getElementById("loaderSpan2");
+                let span3 = document.getElementById("loaderSpan3");
+
+                // Cycle through visibility
+                if (span1.style.visibility === "visible") {
+                    span1.style.visibility = "hidden";
+                    span2.style.visibility = "visible";
+                } else if (span2.style.visibility === "visible") {
+                    span2.style.visibility = "hidden";
+                    span3.style.visibility = "visible";
+                } else if (span3.style.visibility === "visible") {
+                    span3.style.visibility = "hidden";
+                    span1.style.visibility = "visible";
+                } else {
+                    span1.style.visibility = "visible"; // Ensure span1 is visible initially
                 }
             }
         </script>
