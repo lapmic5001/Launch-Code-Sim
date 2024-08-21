@@ -2,7 +2,11 @@
 <html lang="en">
     <head>
         <title>THE IMMORTAL TRIG!!!</title>
+        <link rel="icon" type="image/x-icon" href="images/TrigLogo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
         <style>
             #loader {
                 position: absolute;
@@ -115,15 +119,24 @@
                 color: white;
                 height: 165px;
                 width: 165px;
+                font-size: 50px
+            }
+            #buttonNumberONE:hover {
+                background-color: #04aa6d;
+                color: #04aa6d;
             }
             #yellow:hover {
                 background-color: yellow;
-                color: black;
+                color: yellow;
             }
             #crasher:hover {
                 background-color: red;
                 color: red;
             }
+            .press-start-2p-regular {
+                font-family: "Press Start 2P", system-ui;
+                font-weight: 400;
+                font-style: normal;
         </style>
     </head>
     <body onload="myFunction()" style="margin: 0">
@@ -151,9 +164,21 @@
                 back.
             </p>
             <aside>
-                <button class="lolcool" onclick="func1()">1</button>
-                <button id="yellow" class="lolcool" onclick="func2()">2</button>
-                <button title="THIS WILL CRASH YOUR BROWSER" id="crasher" class="lolcool" onclick="func3()">3</button>
+                <button
+                    title="GO BACK TO MAIN WEBSITE"
+                    id="buttonNumberONE"
+                    class="lolcool press-start-2p-regular"
+                    onclick="func1()">
+                    1
+                </button>
+                <button id="yellow" class="lolcool press-start-2p-regular" onclick="func2()">2</button>
+                <button
+                    title="THIS WILL CRASH YOUR BROWSER"
+                    id="crasher"
+                    class="lolcool press-start-2p-regular"
+                    onclick="func3()">
+                    3
+                </button>
             </aside>
             <footer>
                 <p>Estimated Loading Time: <span id="rndIntView"></span>ms</p>
@@ -175,11 +200,11 @@
             }
 
             function func1() {
-                alert("hi");
+                window.location.replace("./index.html");
             }
 
             function func2() {
-                alert("What do you want?");
+                alert("What do you want? I haven't added anything to this one yet.");
             }
 
             function func3() {
